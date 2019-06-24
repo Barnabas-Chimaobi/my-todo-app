@@ -4,10 +4,11 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-import Todo from './Todo'
-import TodoItems from './TodoItems'
+import Todo from './components/Todo'
+import Likes from './components/Likes'
+import TodoItems from './components/TodoItems'
 
-ReactDOM.render(<Todo />, document.getElementById('root'));
+ReactDOM.render(<Likes />, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
