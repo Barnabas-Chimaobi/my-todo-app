@@ -6,7 +6,7 @@ const TodoItems = (props)=> {
     
         <div>
           {props.individualItem}
-          <p>obi is boy</p>
+          
         </div>
       
   )
