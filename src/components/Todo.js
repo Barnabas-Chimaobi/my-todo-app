@@ -6,23 +6,40 @@ import { notEqual } from 'assert';
 
 class Todo extends Component {
   state = {
-   todoItems: ['cook ',  'eat ', 'rela ', 'bath ','sleep'],
+   todoItems: [],
    //display and add to array
    newTodo: '',
   }
+   componentDidUpdate (prevProps, prevState){
+     if(prevState.todoItems.length !== this.state.todoItems.length){
+       const jsonState = JSON.stringify(this.state.todoItems)
+       localStorage.setItem('todoItems', jsonState)
+     }
+   }
+
+   componentDidMount(){
+     const itemsFromLocalStorage = localStorage.getItem("todoItems")
+     const todoItems = JSON.parse(itemsFromLocalStorage)
+
+     if(todoItems){
+      this.setState(()=>({
+        todoItems
+       }))
+     }
+     
+   }
+
    
   handleChange = (e) =>{
   this.setState({newTodo:e.target.value})
  }
 
   handleSubmit = (e) =>{
-    this.setState( state =>{const todoItems= this.state.todoItems.concat(this.state.newTodo)
-      return{
-        todoItems,
-        newTodo: ''
-    
-      }
-    
+      this.setState((prevState)=>{
+        return {
+          todoItems: [...prevState.todoItems, this.state.newTodo],
+          newTodo: ''
+        }
       })
     
     e.preventDefault()
