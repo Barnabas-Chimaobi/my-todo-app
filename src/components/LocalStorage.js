@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import Header from './Header'
 
 class LocalStorage extends Component {
   render () {
@@ -12,6 +13,7 @@ class LocalStorage extends Component {
     const personParse = JSON.parse(getPerson)
     return (
       <div>
+        <Header title='My Apps Local Storage'/>
         <h3>the stringify version is:</h3>
         <p>{getPerson}</p>
         <p>hello</p>

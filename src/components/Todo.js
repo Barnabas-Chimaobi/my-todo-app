@@ -29,7 +29,7 @@ class Todo extends Component {
      
    }
 
-   
+                                                            
   handleChange = (e) =>{
   this.setState({newTodo:e.target.value})
  }
