@@ -1,11 +1,11 @@
 
-import React, {Component} from 'react'
+import React from 'react'
 import Todo from '../components/Todo'
 import Likes from '../components/Likes'
 import LocalStorage from '../components/LocalStorage'
 import NotFoundPage from '../components/NotFoundPage'
 
-import {BrowserRouter, Route, Switch, Link, NavLink} from 'react-router-dom'
+import {BrowserRouter, Route, Switch} from 'react-router-dom'
 
 const TodoRouter = () => 
 <BrowserRouter>
