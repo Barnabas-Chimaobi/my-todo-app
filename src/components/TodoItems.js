@@ -1,4 +1,5 @@
 import React from 'react'
+import todoItemsStyles from '../styles/todoItems.module.css'
 
 const TodoItems = (props)=> {
   //destructuring props items
@@ -6,9 +7,9 @@ const TodoItems = (props)=> {
   return (
     // <h2>I render individual items</h2>
     
-        <div>
+        <div className={todoItemsStyles.todoItems}>
           {individualItem}
-          <button onClick= {(e) => {
+          <button className={todoItemsStyles.removeButton} onClick= {(e) => {
             handleRemoveOneItem(individualItem)
           }}>Remove</button>
     

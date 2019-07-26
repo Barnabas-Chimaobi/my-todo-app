@@ -1,0 +1,67 @@
+.headerContainer {
+  background: #192a51;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex: wrap;
+  
+}
+
+.headerContainer h2 {
+  color: white;
+  padding-left: 6px;
+}
+
+.headerContainer ul {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  padding: 20px 0
+}
+
+.headerContainer ul li {
+  list-style: none;
+  padding-right: 15px;
+}
+
+.headerContainer ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.headerContainer ul li a:hover {
+  color: red;
+}
+
+.headerContainer ul li a:active {
+  color:green;
+}
+
+@media only screen and (max-width:550px) {
+  .headerContainer ul li  {
+    display: flex;
+    flex-direction: column;
+    font-size: 13px
+  }
+
+  .headerContainer ul  {
+    display: flex;
+    flex-direction: row;
+    font-size: 21px
+  }
+
+  .headerContainer   {
+    display: flex;
+    flex-direction: column;
+    font-size: 21px
+  }
+
+  .headerContainer h2  {
+    padding-top: 11px;
+    margin-left: -28px;
+  }
+
+  .removeAllButton {
+
+  }
+}

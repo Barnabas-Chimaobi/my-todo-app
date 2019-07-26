@@ -2,6 +2,8 @@
 import React, {Component} from 'react';
 import TodoItems from './TodoItems';
 import Header from './Header';
+import todoStyles from '../styles/todo.module.css'
+
 
 class Todo extends Component {
   state = {
@@ -74,20 +76,26 @@ class Todo extends Component {
     const {todoItems, newTodo} = this.state
     return (
       
-      <div>
-      <Header title = 'MY TODO TITLE'/>
-      
-      <h1>welcome TO My Todo App</h1>
-       {todoItems.map(item =>(<TodoItems key={item} handleRemoveOneItem={this.handleRemoveOneItem} individualItem = {item}/>) )}
+      <div className={todoStyles.container}>
+      <Header title = 'MBC TASK SAVER'/>
 
-        <form onSubmit = {this.handleSubmit}>
-          <h3><label>Todo Items</label></h3><br/>
-          <input type="text" value={newTodo} onChange={this.handleChange}/><br/>
-          <button>Submit</button>
-          
-        </form>
-        <button onClick={this.handleRemoveAllItems} style={{display: todoItems.length===0?'none':'block'}}>Remove All</button>
-        
+      <h1 className={todoStyles.title}>Welcome TO MBC Todo App</h1>
+      <div className={todoStyles.wrapper}>
+        <div className={todoStyles.forms}>
+          <form onSubmit = {this.handleSubmit}>
+            <h2><label>Todo Items</label></h2><br/>
+            <input type="text" value={newTodo} onChange={this.handleChange}/><br/>
+            <button>Submit</button>
+            
+          </form>
+        </div>
+        <div className={todoStyles.cover}>
+          <button className={todoStyles.removeAllButton} onClick={this.handleRemoveAllItems} style={{display: todoItems.length===0?'none':'block'}}>Remove All</button>
+          {todoItems.map(item =>(<TodoItems key={item} handleRemoveOneItem={this.handleRemoveOneItem} individualItem = {item}/>) )}
+        </div>
+      
+
+      </div>
       </div>
     )
   }
